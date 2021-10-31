@@ -1,11 +1,12 @@
 const express = require('express')
-
+const {sequelize} = require('./models')
 const app = express()
 
 const PORT = 3000
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
+app.get('/', async (req, res) => {
+  //res.send(sequelize)
+  res.send(await sequelize.models.User.findAll())
 })
 
 app.listen(PORT, () => {
