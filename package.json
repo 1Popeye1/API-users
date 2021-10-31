@@ -1,0 +1,22 @@
+{
+  "name": "api-users",
+  "version": "1.0.0",
+  "description": "API for user management",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1Popeye1/API-users.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1Popeye1/API-users/issues"
+  },
+  "homepage": "https://github.com/1Popeye1/API-users#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
