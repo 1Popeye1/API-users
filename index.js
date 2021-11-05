@@ -30,7 +30,8 @@ app.put('/:id', async (req, res) => {
 
   if (email === undefined || password === undefined)
     return res.status(400).send({error: 'There was an error with the request'})
-	const userId = req.params.id
+  
+  const userId = req.params.id
   let user = await sequelize.models.User.findOne({ where: {id: userId} })
   user.email = email
   user.password = password
