@@ -1,6 +1,7 @@
 const express = require('express')
 const {sequelize} = require('./models')
 const app = express()
+app.use(express.json())
 
 const PORT = 3000
 
@@ -21,6 +22,21 @@ app.get('/:id', async (req, res) => {
   const userId = req.params.id
   const user = await sequelize.models.User.findOne({ where: {id: userId} })
   res.send(user)
+})
+
+app.put('/:id', async (req, res) => {
+  const email = req.body.email
+  const password = req.body.password
+
+  if (email === undefined || password === undefined)
+    return res.status(400).send({error: 'There was an error with the request'})
+  
+  const userId = req.params.id
+  let user = await sequelize.models.User.findOne({ where: {id: userId} })
+  user.email = email
+  user.password = password
+  await user.save()
+  res.send(200)
 })
 
 app.listen(PORT, () => {
