@@ -1,0 +1,1 @@
+module.exports =  value => /[0-9]/g.test(value)

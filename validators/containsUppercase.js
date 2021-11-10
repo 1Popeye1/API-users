@@ -1,0 +1,1 @@
+module.exports =  (value) =>/[A-Z]/g.test(value)
